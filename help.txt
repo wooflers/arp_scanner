@@ -1,0 +1,40 @@
+Whoa a help file!
+
+Updated as of v.0.0.7
+============================
+So here's the tea...
+
+This is a python project I'm making to help learn the language and play with networking. Don't take any of this too seriously :)
+
+The scanner uses Scapy to scan via ARP broadcast. 
+The scanner takes the replies ip and mac addresses and add them to a SQLite3 db with a scan ID to indentify which scan they were apart of.
+There is a table of known hosts which hosts that have been scanned can be added too. This can help if you're looking for new hosts.
+============================
+
+Scanning options -
+
+Target Network - Pretty self explanitory but this is going to be the local network that you're currently on. i.e. 192.168.0.1/24.
+If you're not familiar with CIDR format... google it.
+
+Interval - This is the number of seconds between scans. If you're scanning over a longer period of time you might not want to keep flooding brodcast messages.
+
+Duration - How long the scan will last.
+
+What is breaks down to is that when you have the options selected the scanner will scan [target_network] every [interval] seconds for [duration] seconds.
+
+So if...
+target_network = 192.168.0.1/24
+interval = 300
+duration = 3600
+
+The scanner will scan 192.168.0.1/24 every 5 minutes for an hour.
+============================
+
+SQLite3 database stuff -
+
+Scans and info are stored in the sqlite_netscan.db file. if it gives you trouble rebuild the tables with the options in the menu.
+
+Not everything in here might be used yet. 
+
+
+ 
